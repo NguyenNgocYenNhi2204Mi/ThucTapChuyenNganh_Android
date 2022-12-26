@@ -6,19 +6,6 @@
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.Myflix.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarMyProfileActivity"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/black"
-            app:popupTheme="@style/Theme.Myflix.PopupOverlay" />
-    </com.google.android.material.appbar.AppBarLayout>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -63,6 +50,23 @@
                 android:layout_margin="10dp"
                 tools:text="release_date" />
 
+            <Spinner
+                android:id="@+id/targetLangSelector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@color/white"
+                android:backgroundTintMode="multiply"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvRD" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:visibility="invisible" />
+
             <TextView
                 android:id="@+id/tvOverview"
                 android:layout_width="match_parent"
@@ -71,6 +75,16 @@
                 android:textSize="15sp"
                 tools:text="overview"
                 android:layout_margin="10dp"/>
+
+            <TextView
+                android:id="@+id/translatedText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                tools:text="overview"
+                android:layout_margin="10dp"/>
+
 
         </LinearLayout>
 
