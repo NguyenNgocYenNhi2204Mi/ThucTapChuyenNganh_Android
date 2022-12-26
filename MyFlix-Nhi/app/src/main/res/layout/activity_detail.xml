@@ -75,17 +75,6 @@
                 android:textSize="15sp"
                 tools:text="overview"
                 android:layout_margin="10dp"/>
-
-            <TextView
-                android:id="@+id/translatedText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                tools:text="overview"
-                android:layout_margin="10dp"/>
-
-
         </LinearLayout>
 
     </ScrollView>
