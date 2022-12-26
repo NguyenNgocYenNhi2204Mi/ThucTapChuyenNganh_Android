@@ -1,14 +1,15 @@
 package ndtt.myflix.DAO
 
+import androidx.lifecycle.MutableLiveData
 import androidx.room.*
-import ndtt.myflix.models.Results
+import ndtt.myflix.Models.Results
 
 @Dao
 interface DetailDao {
-    @Query("SELECT * FROM phim")
+    @Query("SELECT * FROM movie")
     fun getAll(): List<Results>
 
-    @Query("SELECT * FROM phim WHERE id=:id ")
+    @Query("SELECT * FROM movie WHERE id=:id ")
     fun getDetail(id: Int): List<Results>
 
 //    @Query("SELECT * FROM movies WHERE id=:id ")
@@ -18,5 +19,5 @@ interface DetailDao {
     fun updateDetail(movieDetail: ArrayList<Results>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertDetail( movieDetail: ArrayList<Results>)
+    fun insertDetail(movieDetail: ArrayList<Results>)
 }

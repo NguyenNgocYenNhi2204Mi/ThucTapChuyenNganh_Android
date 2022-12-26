@@ -1,4 +1,4 @@
-package ndtt.myflix
+package ndtt.myflix.Activity
 
 import android.content.Intent
 import android.graphics.Typeface
@@ -10,6 +10,7 @@ import android.os.Looper
 import android.view.WindowInsets
 import android.view.WindowManager
 import kotlinx.android.synthetic.main.activity_splash.*
+import ndtt.myflix.R
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,17 +1,17 @@
-package ndtt.myflix.models
+package ndtt.myflix.Models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 
-@Entity (tableName = "dsphim")
-data class MovieList(
+@Entity(tableName = "MovieList")
+data class Movies(
     @PrimaryKey val id: Int,
     val page: Int,
-    val results: ArrayList<Results>,
-    val total_results: Int,
-    val total_pages: Int
+    val results: List<Results>,
+    val total_pages: Int,
+    val total_results: Int
 )
 
 class Converters {
