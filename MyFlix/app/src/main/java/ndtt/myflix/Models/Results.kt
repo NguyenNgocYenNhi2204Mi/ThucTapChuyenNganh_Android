@@ -20,7 +20,8 @@ data class Results(
     val title: String,
     val video: Boolean,
     val vote_average: Double,
-    val vote_count: Int
+    val vote_count: Int,
+    val tagline: String
 ): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readByte() != 0.toByte(),
@@ -35,7 +36,8 @@ data class Results(
         parcel.readString()!!,
         parcel.readByte() != 0.toByte(),
         parcel.readDouble(),
-        parcel.readInt()
+        parcel.readInt(),
+        parcel.readString()!!
     ) {
     }
 
@@ -53,6 +55,7 @@ data class Results(
         parcel.writeByte(if (video) 1 else 0)
         parcel.writeDouble(vote_average)
         parcel.writeInt(vote_count)
+        parcel.writeString(tagline)
     }
 
     override fun describeContents(): Int {

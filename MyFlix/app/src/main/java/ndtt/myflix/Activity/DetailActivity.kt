@@ -24,7 +24,6 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var viewModel: MovieViewModel
     private var movieId by Delegates.notNull<Int>()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         movieId = intent.getIntExtra("id", 0)
@@ -37,6 +36,8 @@ class DetailActivity : AppCompatActivity() {
         viewModel.observeMovieDetailData().observe(this, Observer { movieList ->
             tvTitle.text = movieList.title
             tvMark.text = ((movieList.vote_average * 10.0).roundToInt() / 10.0).toString() + "/10"
+
+            tvTagline.text = movieList.tagline
             tvOverview.text = movieList.overview
             tvRD.text = "Date released: " + setReleaseDate(movieList.release_date)
             viewModel.sourceText = movieList.overview
