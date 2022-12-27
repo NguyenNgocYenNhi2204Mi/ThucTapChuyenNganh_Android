@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_detail.*
 import ndtt.myflix.R
 import ndtt.myflix.ViewModel.MovieViewModel
 import ndtt.myflix.databinding.ActivityDetailBinding
+import kotlin.math.roundToInt
 import kotlin.properties.Delegates
 
 class DetailActivity : AppCompatActivity() {
@@ -35,6 +36,7 @@ class DetailActivity : AppCompatActivity() {
 
         viewModel.observeMovieDetailData().observe(this, Observer { movieList ->
             tvTitle.text = movieList.title
+            tvMark.text = ((movieList.vote_average * 10.0).roundToInt() / 10.0).toString() + "/10"
             tvOverview.text = movieList.overview
             tvRD.text = "Date released: " + setReleaseDate(movieList.release_date)
             viewModel.sourceText = movieList.overview
