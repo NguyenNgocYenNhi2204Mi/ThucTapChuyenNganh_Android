@@ -44,7 +44,7 @@ class MovieViewModel (application: Application) : AndroidViewModel(application) 
         .build()
     )
     val targetLang = MutableLiveData<Language>()
-    lateinit var sourceText : String
+    val sourceText : String = ""
 
     val translatedText = MediatorLiveData<ResultOrError>()
     private val translating = MutableLiveData<Boolean>()
